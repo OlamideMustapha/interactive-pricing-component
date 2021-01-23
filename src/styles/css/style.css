@@ -1,0 +1,15 @@
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */
