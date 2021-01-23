@@ -1,25 +1,28 @@
 html
   padding: 0px
   margin: 0px
+  *
+    box-sizing: border-box
 
-*
-  box-sizing: border-box
+
+  body
+    font-family: 'Manrope', sans-serif
+    font-size: 15px
+    padding: 0px
+    margin: 0px
+
+.main
+  background-image: url("../../../images/bg-pattern.svg")
+  background-repeat: no-repeat
+  background-size: 68.625em
+  background-position: 1% 0%
+  min-height: 100vh
+
+  @include breakpoint-up (large)
+    background-size: 96.625em
+    // background-position: 1% -93%
 
 
-body
-  font-family: 'Manrope', sans-serif
-  font-size: 15px
-
-// 640px 1024px 1400px
-$breakpoints-up: ("medium": "10em", "large": "16em", "xlarge": "21.875em")
-
-// 630px 1023px 1390px
-$breakpoints-down: ("small": "9.84375em", "medium": "15.984375em", "large": "21.71875em")
-
-@mixin breakpoint-up ($size)
-  @media (min-width: map-get ($breakpoints-up, $size))
-    @content
-
-@mixin breakpoint-down ($size)
-  @media (max-width: map-get ($breakpoints-down, $size))
-    @content
+.container
+  margin: auto
+  padding: 20px

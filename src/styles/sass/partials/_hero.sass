@@ -1,0 +1,35 @@
+.hero
+  @include flex-column (center, center)
+  background-image: url("../../../images/pattern-circles.svg")
+  background-size: 135px
+  background-repeat: no-repeat
+  background-position: center center
+  height: 200px
+
+  @include breakpoint-up (medium)
+    height: 250px
+
+
+  &__text
+    @include flex-column (space-around, center)
+    text-align: center
+
+    h1
+      color: $darkDesaturatedBlue
+      font-size: 1.125em
+      margin: 5px
+
+      @include breakpoint-up (medium)
+        font-size: 1.375em
+        margin: 10px
+
+    div
+      margin: auto
+      width: 190px
+      line-height: 1.7em
+      font-size: 0.875em
+      font-weight: 500
+      color: $grayishBlue
+
+      @include breakpoint-up (medium)
+        width: max-content
