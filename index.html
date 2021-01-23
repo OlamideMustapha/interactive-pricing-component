@@ -36,29 +36,34 @@
 
         <div class="pricing__details">
           <div class="pricing__pageview">
-            Pageviews
+            <span id="pageviews">0</span> PAGEVIEWS
           </div>
   
           <div class="pricing__price">
-            $ /month
+            <span id="price">$0</span> / month
           </div>
           
           <div class="pricing__ranger">
-            <input type="range" />
+            <input class="js" type="range" value="0", step="1", min=0, max=100/>
           </div>
           
           <div class="pricing__billing">
             
-            <span class="pricing__billing-monthly">Monthly Billing</span>
+            <div class="pricing__billing-monthly">Monthly Billing</div>
             
-            <span class="pricing__billing-toggle">
+            <div class="pricing__billing-toggle">
               <label class="switch">
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-            </span>
+            </div>
 
-            <span class="pricing__billing-yearly">Yearly Billing <span>25% discount</span></span>
+            <div class="pricing__billing-yearly">
+              Yearly Billing 
+              <span id="discount">
+                -25%<span class="hide-for-mobile"> discount</span>
+              </span>
+            </div>
           </div>
         </div>
   

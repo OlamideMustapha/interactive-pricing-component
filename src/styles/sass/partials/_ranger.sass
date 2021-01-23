@@ -1,6 +1,78 @@
-input[type=range]
-  appearance: none
-  width: 100%
-  background-color: $lightGrayishBlue2
+$track-w: 100%
+$track-h: .60em
+$thumb-d: 2.5em
+$track-c: #ccc
+$filll-c: $softCyan
+
+@mixin track($fill: 0)
+  box-sizing: border-box
+  border-radius: 10px
+  border: none
+  width: $track-w
+  height: $track-h
+  background: #ccc
+  
+  @if $fill == 1
+    .js &
+      background: linear-gradient($filll-c, $filll-c) 0/ var(--sx) 100% no-repeat $track-c
+  
+@mixin fill()
+  height: $track-h
+  background: $filll-c
+
+@mixin thumb()
+  border: none
+  width: $thumb-d
+  height: $thumb-d
+  border-radius: 50%
+  background-image: url("../../../images/icon-slider.svg")
+  background-repeat: no-repeat
+  background-size: 23px
+  background-position: 42% 49%
+  background-color: $strongCyan
+  box-shadow: 0px 2px 30px 1px  $strongCyan
+
+[type='range']
+  outline: none
+  &, &::-webkit-slider-thumb
+    -webkit-appearance: none
+
+  --range: calc(var(--max) - var(--min))
+  --ratio: calc((var(--val) - var(--min))/var(--range))
+  --sx: calc(.5*$thumb- + var(--ratio)*(100% - $thumb-))
+  margin: 0
+  padding: 0
+  width: $track-w
+  height: $thumb-d
+  background: transparent
+  font: 1em/1 arial, sans-serif
   cursor: pointer
-  color: white
+
+  &::-webkit-slider-runnable-track
+    @include track (1)
+
+  &::-moz-range-track
+    @include track
+  &::-ms-track
+    @include track
+  
+  &::-moz-range-progress
+    @include fill
+  &::-ms-fill-lower
+    @include fill
+  
+  &::-webkit-slider-thumb
+    margin-top: .5*($track-h - $thumb-d)
+    @include thumb
+
+  &::-moz-range-thumb
+    @include thumb
+  &::-ms-thumb
+    margin-top: 0
+    @include thumb
+
+  
+  &::-ms-tooltip
+    display: none
+  
+  
