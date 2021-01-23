@@ -1,7 +1,7 @@
 $track-w: 100%
 $track-h: .60em
-$thumb-d: 2.5em
-$track-c: #ccc
+$thumb-d: 3.5em
+$track-c: $lightGrayishBlue1
 $filll-c: $softCyan
 
 @mixin track($fill: 0)
@@ -10,7 +10,7 @@ $filll-c: $softCyan
   border: none
   width: $track-w
   height: $track-h
-  background: #ccc
+  background: $track-c
   
   @if $fill == 1
     .js &
@@ -27,8 +27,8 @@ $filll-c: $softCyan
   border-radius: 50%
   background-image: url("../../../images/icon-slider.svg")
   background-repeat: no-repeat
-  background-size: 23px
-  background-position: 42% 49%
+  background-size: 20px
+  background-position: center center
   background-color: $strongCyan
   box-shadow: 0px 2px 30px 1px  $strongCyan
 
