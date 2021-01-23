@@ -10,17 +10,33 @@ html
     font-size: 0.938em
     padding: 0px
     margin: 0px
+    min-height: 100vh
+    // @include flex-column (space-between)
+
 
 .main
   background-image: url("../../../images/bg-pattern.svg")
   background-repeat: no-repeat
   background-size: 68.625em
   background-position: 1% 0%
-  min-height: 100vh
+  // min-height: 100vh
+
+  @include breakpoint-up (medium)
+    background-size: 140vw
 
   @include breakpoint-up (large)
-    background-size: 96.625em
-    // background-position: 1% -93%
+    background-size: 110vw
+    background-position: 1% 1%
+
+  @include breakpoint-up (xlarge)
+    background-position: 1% -171%
+
+  @include breakpoint-up (xxlarge)
+    background-size: 100vw
+    background-position: 1% -78%
+  
+
+  
 
 
 .container
