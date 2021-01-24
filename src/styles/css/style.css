@@ -18,6 +18,7 @@ html body {
   background-repeat: no-repeat;
   background-size: 68.625em;
   background-position: 1% 0%;
+  background-color: #fafbff;
 }
 @media (min-width: 640px) {
   .main {
