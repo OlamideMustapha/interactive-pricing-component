@@ -1,20 +1,15 @@
 $track-w: 100%
 $track-h: .60em
-$thumb-d: 3.5em
+$thumb-d: 3em
 $track-c: $lightGrayishBlue1
 $filll-c: $softCyan
 
-@mixin track($fill: 0)
-  box-sizing: border-box
+@mixin track()
   border-radius: 10px
   border: none
   width: $track-w
-  height: $track-h
-  background: $track-c
+  border-radius: 10px
   
-  @if $fill == 1
-    .js &
-      background: linear-gradient($filll-c, $filll-c) 0/ var(--sx) 100% no-repeat $track-c
   
 @mixin fill()
   height: $track-h
@@ -32,38 +27,44 @@ $filll-c: $softCyan
   background-color: $strongCyan
   box-shadow: 1px 16px 34px -3px $strongCyan
 
-[type='range']
+input[type='range']
   outline: none
-  &, &::-webkit-slider-thumb
-    -webkit-appearance: none
-
-  --range: calc(var(--max) - var(--min))
-  --ratio: calc((var(--val) - var(--min))/var(--range))
-  --sx: calc(.5*$thumb- + var(--ratio)*(100% - $thumb-))
+  border-radius: 10px
+  transition: background 450ms ease-in
+  width: $track-w
+  height: $track-h
   margin: 0
   padding: 0
-  width: $track-w
-  height: $thumb-d
-  background: transparent
+  background: $track-c
+
   font: 1em/1 arial, sans-serif
   cursor: pointer
 
+  -webkit-appearance: none
+
   &::-webkit-slider-runnable-track
-    @include track (1)
+    @include track
+    -webkit-appearance: none
+
 
   &::-moz-range-track
     @include track
+    background: $track-c
+
   &::-ms-track
     @include track
+    background: $track-c
   
   &::-moz-range-progress
     @include fill
+
   &::-ms-fill-lower
     @include fill
   
   &::-webkit-slider-thumb
-    margin-top: .5*($track-h - $thumb-d)
     @include thumb
+    -webkit-appearance: none
+
 
   &::-moz-range-thumb
     @include thumb
@@ -74,5 +75,3 @@ $filll-c: $softCyan
   
   &::-ms-tooltip
     display: none
-  
-  
