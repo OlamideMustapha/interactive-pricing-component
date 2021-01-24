@@ -10,15 +10,16 @@ html body {
   font-size: 0.938em;
   padding: 0px;
   margin: 0px;
-  min-height: 100vh;
 }
 
 .main {
+  position: relative;
   background-image: url("../../../images/bg-pattern.svg");
   background-repeat: no-repeat;
   background-size: 68.625em;
   background-position: 1% 0%;
   background-color: #fafbff;
+  min-height: 100vh;
 }
 @media (min-width: 640px) {
   .main {
@@ -27,25 +28,41 @@ html body {
 }
 @media (min-width: 1024px) {
   .main {
-    background-size: 110vw;
+    background-size: 100vw;
     background-position: 1% 1%;
   }
 }
 @media (min-width: 1351px) {
   .main {
-    background-position: 1% -171%;
+    background-size: 120vw;
+    background-position: 1% -85%;
   }
 }
 @media (min-width: 1400px) {
   .main {
-    background-size: 100vw;
-    background-position: 1% -78%;
+    background-size: 100%;
+    background-position: center top;
   }
 }
 
 .container {
   margin: auto;
   padding: 20px;
+}
+
+.attribution {
+  color: #293356;
+  position: relative;
+  bottom: 0;
+}
+@media (min-width: 640px) {
+  .attribution {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .hero {
@@ -57,7 +74,17 @@ html body {
   background-size: 135px;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 200px;
+  padding: 63px 20px;
+}
+@media (min-width: 1351px) {
+  .hero {
+    padding: 85px 20px;
+  }
+}
+@media (min-width: 1400px) {
+  .hero {
+    padding: 90px 20px;
+  }
 }
 .hero__text {
   display: flex;
@@ -68,22 +95,33 @@ html body {
 }
 .hero__text h1 {
   color: #293356;
-  font-size: 1.125em;
+  font-size: 16px;
   margin: 5px;
 }
 @media (min-width: 640px) {
   .hero__text h1 {
-    font-size: 1.375em;
-    margin: 10px;
+    font-size: 22px;
+    font-weight: 800;
+  }
+}
+@media (min-width: 1400px) {
+  .hero__text h1 {
+    font-size: 32px;
+    margin: 15px;
   }
 }
 .hero__text div {
   margin: auto;
-  width: 190px;
+  width: 130px;
   line-height: 1.7em;
-  font-size: 0.875em;
+  font-size: 10px;
   font-weight: 500;
   color: #858fad;
+}
+@media (min-width: 1400px) {
+  .hero__text div {
+    font-size: 16px;
+  }
 }
 @media (min-width: 640px) {
   .hero__text div {
@@ -96,36 +134,65 @@ html body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-radius: 5px;
-  box-shadow: 0px 1px 10px 0px #8080804f;
+  border-radius: 8px;
+  box-shadow: 0px 6px 24px 0px #c7c5c54f;
   margin: auto;
-  padding: 0;
-  width: 85%;
+  padding: 0px;
+  margin-bottom: 30px;
+  width: 80%;
   color: #858fad;
   background-color: white;
   text-align: center;
-  font-size: 0.7em;
+  font-size: 10px;
+}
+@media (min-width: 1351px) {
+  .pricing {
+    font-size: 14px;
+  }
 }
 @media (min-width: 640px) {
   .pricing {
-    width: 450px;
+    width: 350px;
+  }
+}
+@media (min-width: 1351px) {
+  .pricing {
+    width: 470px;
+  }
+}
+@media (min-width: 1400px) {
+  .pricing {
+    width: 560px;
   }
 }
 .pricing > div {
   width: 100%;
-  padding: 20px;
+}
+@media (max-width: 630px) {
+  .pricing > div {
+    padding: 20px;
+  }
 }
 @media (min-width: 640px) {
   .pricing > div {
-    padding: 25px 50px;
+    padding: 25px 15px;
+  }
+}
+@media (min-width: 1351px) {
+  .pricing .pricing__section {
+    padding: 45px 50px;
   }
 }
 .pricing__details {
   display: grid;
   grid-template-rows: repeat(4, max-content);
+  grid-gap: 26px;
   grid-template-columns: 100%;
-  grid-gap: 22px;
-  padding: 10px 0;
+}
+@media (min-width: 1400px) {
+  .pricing__details {
+    grid-gap: 36px;
+  }
 }
 @media (min-width: 640px) {
   .pricing__details {
@@ -152,6 +219,11 @@ html body {
     width: 108px;
   }
 }
+@media (min-width: 1024px) {
+  .pricing__pageview {
+    width: max-content;
+  }
+}
 .pricing__pageview #pageviews {
   padding-right: 5px;
 }
@@ -163,7 +235,6 @@ html body {
   justify-content: center;
   align-items: center;
   font-weight: 600;
-  margin: -9px 0px 8px 0px;
 }
 @media (min-width: 640px) {
   .pricing__price {
@@ -208,6 +279,11 @@ html body {
 .pricing__billing div:not(:last-child) {
   margin: 0px 5px;
 }
+@media (min-width: 1400px) {
+  .pricing__billing div:not(:last-child) {
+    margin: 0px 10px;
+  }
+}
 .pricing__billing-yearly {
   display: flex;
   flex-direction: row;
@@ -218,6 +294,11 @@ html body {
 @media (max-width: 630px) {
   .pricing__billing-yearly {
     width: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .pricing__billing-yearly {
+    width: 180px;
   }
 }
 .pricing__billing-yearly #discount {
@@ -231,6 +312,11 @@ html body {
 .pricing .features {
   border-top: solid 1px #eaeefb;
 }
+@media (max-width: 630px) {
+  .pricing .features {
+    padding: 20px 0px 27px 0px;
+  }
+}
 @media (min-width: 640px) {
   .pricing .features {
     display: flex;
@@ -240,9 +326,19 @@ html body {
     text-align: left;
   }
 }
+@media (min-width: 1351px) {
+  .pricing .features {
+    padding: 25px 52px;
+  }
+}
+@media (min-width: ) {
+  .pricing .features {
+    padding: 35px 52px;
+  }
+}
 .pricing .features ul {
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
   padding: 0px;
   list-style-type: none;
 }
@@ -251,17 +347,22 @@ html body {
     margin: 0;
   }
 }
-.pricing .features__item {
-  margin: 10px 0px;
+.pricing .features__item:not(:last-child) {
+  margin-bottom: 11px;
 }
 .pricing .features__item img {
   margin: 0px 8px;
 }
 
 #price {
-  font-size: 30px;
+  font-size: 22px;
   color: #293356;
-  font-weight: 700;
+  font-weight: 800;
+}
+@media (min-width: 1351px) {
+  #price {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 630px) {
@@ -273,7 +374,7 @@ html body {
 .switch {
   position: relative;
   display: inline-block;
-  width: 46px;
+  width: 37px;
   height: 20px;
 }
 
@@ -310,7 +411,7 @@ html body {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(17px);
 }
 
 .slider.round {
@@ -408,13 +509,19 @@ input[type=range]::-ms-tooltip {
 .btn {
   font-weight: 800;
   background: #293356;
-  padding: 8px 35px;
+  padding: 8px 31px;
   outline: none;
-  color: #858fad;
+  color: #cdd7ee;
   border: solid 2px transparent;
   border-radius: 50px;
   cursor: pointer;
+  font-size: 10px;
   transition: all 1s ease-in-out;
+}
+@media (min-width: 1351px) {
+  .btn {
+    font-size: 14px;
+  }
 }
 .btn:hover {
   color: white;

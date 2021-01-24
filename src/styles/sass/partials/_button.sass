@@ -1,13 +1,16 @@
 .btn
   font-weight: 800
   background: $darkDesaturatedBlue
-  padding: 8px 35px
+  padding: 8px 31px
   outline: none
-  color: $grayishBlue
+  color: $lightGrayishBlue2
   border: solid 2px transparent
   border-radius: 50px
   cursor: pointer
+  font-size: $small
   transition: all 1s ease-in-out
+  @include breakpoint-up (xlarge)
+    font-size: 14px
 
   &:hover
     color: $white

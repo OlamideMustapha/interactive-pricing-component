@@ -10,30 +10,48 @@ html
     font-size: 0.938em
     padding: 0px
     margin: 0px
-    min-height: 100vh
 
 
 .main
+  position: relative
   background-image: url("../../../images/bg-pattern.svg")
   background-repeat: no-repeat
   background-size: 68.625em
   background-position: 1% 0%
   background-color: $veryPaleBlue
+  min-height: 100vh
+  // @include breakpoint-up (medium)
+
 
   @include breakpoint-up (medium)
     background-size: 140vw
 
   @include breakpoint-up (large)
-    background-size: 110vw
+    background-size: 100vw
     background-position: 1% 1%
 
   @include breakpoint-up (xlarge)
-    background-position: 1% -171%
+    background-size: 120vw
+    background-position: 1% -85%
 
   @include breakpoint-up (xxlarge)
-    background-size: 100vw
-    background-position: 1% -78%
+    background-size: 100%
+    background-position: center top
+  //   background-size: 100vw
+  //   background-position: 1% -78%
   
 .container
   margin: auto
   padding: 20px
+
+.attribution
+  color: $darkDesaturatedBlue
+  position: relative
+  bottom: 0
+
+  @include breakpoint-up(medium)
+    position: absolute
+    width: 100%
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)

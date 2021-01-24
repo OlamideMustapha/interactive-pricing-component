@@ -1,31 +1,49 @@
 .pricing
   @include flex-column(space-around, center)
-  border-radius: 5px
-  box-shadow: 0px 1px 10px 0px #8080804f
+  border-radius: 8px
+  box-shadow: 0px 6px 24px 0px #c7c5c54f
   margin: auto
-  padding: 0
-  width: 85%
+  padding: 0px
+  margin-bottom: 30px
+  width: 80%
   color: $grayishBlue
   background-color: $white
   text-align: center
-  font-size: 0.7em
-  
+  font-size: $small
+  @include breakpoint-up (xlarge)
+    font-size: 14px
   @include breakpoint-up(medium)
-    width: 450px
+    width: 350px
+  @include breakpoint-up(xlarge)
+    width: 470px
+  @include breakpoint-up(xxlarge)
+    width: 560px
+  
 
   & > div
+    // padding: 0 17px
     width: 100%
-    padding: 20px
+    @include breakpoint-down (small)
+      padding: 20px
   
     @include breakpoint-up(medium)
-      padding: 25px 50px
+      padding: 25px 15px
+
+    
+  .pricing__section
+    @include breakpoint-up(xlarge)
+      padding: 45px 50px
 
   &__details
     display: grid
     grid-template-rows: repeat(4, max-content)
+    grid-gap: 26px
     grid-template-columns: 100%
-    grid-gap: 22px
-    padding: 10px 0
+    @include breakpoint-up(xxlarge)
+      grid-gap: 36px
+      
+
+    // padding: 25px 0
 
     @include breakpoint-up(medium)
       grid-template-rows: repeat(3, max-content)
@@ -44,6 +62,9 @@
       grid-column: 1 / 1
       width: 108px
 
+    @include breakpoint-up(large)
+      width: max-content
+
     font-weight: 800
     letter-spacing: 0.1em
     #pageviews
@@ -60,7 +81,7 @@
 
     @include flex-row(center, center)
     font-weight: 600
-    margin: -9px 0px 8px 0px
+    // margin: 5px auto
 
     #price
       padding-right: 5px
@@ -90,12 +111,18 @@
 
     div:not(:last-child)
       margin: 0px 5px
+      @include breakpoint-up(xxlarge)
+        margin: 0px 10px
+
     
     &-yearly
       @include flex-row (space-between, center)
       width: 130px
       @include breakpoint-down (small)
         width: 100px
+
+      @include breakpoint-up (large)
+        width: 180px
 
       #discount
         font-size: 0.795em
@@ -107,12 +134,22 @@
     
   .features
     border-top: solid 1px $lightGrayishBlue1
+    
+    @include breakpoint-down (small)
+      padding: 20px 0px 27px 0px
+
     @include breakpoint-up(medium)
       @include flex-row (space-between, center)
       text-align: left
+    @include breakpoint-up(xlarge)
+      padding: 25px 52px
+
+    @include breakpoint-up(sxlarge)
+      padding: 35px 52px
+
     ul
       margin: auto
-      margin-bottom: 30px
+      margin-bottom: 22px
       padding: 0px
       list-style-type: none
       @include breakpoint-up(medium)
@@ -120,14 +157,18 @@
 
 
     &__item
-      margin: 10px 0px
+      &:not(:last-child)
+        margin-bottom: 11px
       img
         margin: 0px 8px
 
 #price
-  font-size: 30px
+  font-size: $large
   color: $darkDesaturatedBlue
-  font-weight: 700
+  font-weight: 800
+  @include breakpoint-up (xlarge)
+    font-size: $xlarge
+
 
 .hide-for-mobile
   @include breakpoint-down(small)

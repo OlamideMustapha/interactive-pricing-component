@@ -4,7 +4,13 @@
   background-size: 135px
   background-repeat: no-repeat
   background-position: center center
-  height: 200px
+  padding: 63px 20px
+
+  @include breakpoint-up (xlarge)
+    padding: 85px 20px
+  @include breakpoint-up (xxlarge)
+    padding: 90px 20px
+
 
 
   &__text
@@ -13,20 +19,28 @@
 
     h1
       color: $darkDesaturatedBlue
-      font-size: 1.125em
+      font-size: $medium
       margin: 5px
 
       @include breakpoint-up (medium)
-        font-size: 1.375em
-        margin: 10px
+        font-size: $large
+        font-weight: 800
+
+      @include breakpoint-up (xxlarge)
+        font-size: $xlarge
+        margin: 15px
 
     div
       margin: auto
-      width: 190px
+      width: 130px
       line-height: 1.7em
-      font-size: 0.875em
+      font-size: $small
       font-weight: 500
       color: $grayishBlue
+      @include breakpoint-up (xxlarge)
+        font-size: $medium
+
+
 
       @include breakpoint-up (medium)
         width: max-content
