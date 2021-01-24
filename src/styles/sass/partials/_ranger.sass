@@ -4,17 +4,16 @@ $thumb-d: 3.5em
 $track-c: $lightGrayishBlue1
 $filll-c: $softCyan
 
-@mixin track($fill: 0)
-  box-sizing: border-box
+@mixin track()
   border-radius: 10px
   border: none
   width: $track-w
   height: $track-h
   background: $track-c
   
-  @if $fill == 1
-    .js &
-      background: linear-gradient($filll-c, $filll-c) 0/ var(--sx) 100% no-repeat $track-c
+  // @if $fill == 1
+  //   .js &
+  //     background: linear-gradient($filll-c, $filll-c) 0/ var(--sx) 100% no-repeat $track-c
   
 @mixin fill()
   height: $track-h
@@ -32,24 +31,26 @@ $filll-c: $softCyan
   background-color: $strongCyan
   box-shadow: 1px 16px 34px -3px $strongCyan
 
-[type='range']
+input[type='range']
   outline: none
-  &, &::-webkit-slider-thumb
-    -webkit-appearance: none
-
-  --range: calc(var(--max) - var(--min))
-  --ratio: calc((var(--val) - var(--min))/var(--range))
-  --sx: calc(.5*$thumb- + var(--ratio)*(100% - $thumb-))
-  margin: 0
-  padding: 0
+  transition: background 450ms ease-in
   width: $track-w
   height: $thumb-d
+  // margin: 0
+  // padding: 0
   background: transparent
   font: 1em/1 arial, sans-serif
   cursor: pointer
+  border: solid 1px #00b300
+
+  -webkit-appearance: none
+
+  // --range: calc(36 - 8)
+  // --ratio: calc((var(--val) - 8)/var(--range))
+  // --sx: calc(.5*$thumb-h + var(--ratio)*(100% - $thumb-h))
 
   &::-webkit-slider-runnable-track
-    @include track (1)
+    @include track
 
   &::-moz-range-track
     @include track
@@ -64,6 +65,8 @@ $filll-c: $softCyan
   &::-webkit-slider-thumb
     margin-top: .5*($track-h - $thumb-d)
     @include thumb
+    -webkit-appearance: none
+
 
   &::-moz-range-thumb
     @include thumb
@@ -72,7 +75,27 @@ $filll-c: $softCyan
     @include thumb
 
   
-  &::-ms-tooltip
-    display: none
+  // &::-ms-tooltip
+  //   display: none
   
   
+.chrome input
+  background: linear-gradient(to right, green 0%, green 50%, #fff 50%, #fff 100%)
+  border: solid 1px #00b300
+  border-radius: 8px
+  height: 7px
+  width: 356px
+  outline: none 
+  transition: background 450ms ease-in
+        
+  -webkit-appearance: none
+        
+//   .chrome input::-webkit-slider-thumb
+//     background-color: orange
+//     border: solid 12px gold
+//     border-radius: 0
+              
+//     height: 25px
+//     width: 25px
+//     border-radius: 50%
+//     -webkit-appearance: none
