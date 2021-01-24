@@ -1,6 +1,6 @@
 $track-w: 100%
 $track-h: .60em
-$thumb-d: 3.5em
+$thumb-d: 3em
 $track-c: $lightGrayishBlue1
 $filll-c: $softCyan
 
@@ -8,12 +8,8 @@ $filll-c: $softCyan
   border-radius: 10px
   border: none
   width: $track-w
-  height: $track-h
-  background: $track-c
+  border-radius: 10px
   
-  // @if $fill == 1
-  //   .js &
-  //     background: linear-gradient($filll-c, $filll-c) 0/ var(--sx) 100% no-repeat $track-c
   
 @mixin fill()
   height: $track-h
@@ -33,37 +29,39 @@ $filll-c: $softCyan
 
 input[type='range']
   outline: none
+  border-radius: 10px
   transition: background 450ms ease-in
   width: $track-w
-  height: $thumb-d
-  // margin: 0
-  // padding: 0
-  background: transparent
+  height: $track-h
+  margin: 0
+  padding: 0
+  background: $track-c
+
   font: 1em/1 arial, sans-serif
   cursor: pointer
-  border: solid 1px #00b300
 
   -webkit-appearance: none
 
-  // --range: calc(36 - 8)
-  // --ratio: calc((var(--val) - 8)/var(--range))
-  // --sx: calc(.5*$thumb-h + var(--ratio)*(100% - $thumb-h))
-
   &::-webkit-slider-runnable-track
     @include track
+    -webkit-appearance: none
+
 
   &::-moz-range-track
     @include track
+    background: $track-c
+
   &::-ms-track
     @include track
+    background: $track-c
   
   &::-moz-range-progress
     @include fill
+
   &::-ms-fill-lower
     @include fill
   
   &::-webkit-slider-thumb
-    margin-top: .5*($track-h - $thumb-d)
     @include thumb
     -webkit-appearance: none
 
@@ -75,27 +73,5 @@ input[type='range']
     @include thumb
 
   
-  // &::-ms-tooltip
-  //   display: none
-  
-  
-.chrome input
-  background: linear-gradient(to right, green 0%, green 50%, #fff 50%, #fff 100%)
-  border: solid 1px #00b300
-  border-radius: 8px
-  height: 7px
-  width: 356px
-  outline: none 
-  transition: background 450ms ease-in
-        
-  -webkit-appearance: none
-        
-//   .chrome input::-webkit-slider-thumb
-//     background-color: orange
-//     border: solid 12px gold
-//     border-radius: 0
-              
-//     height: 25px
-//     width: 25px
-//     border-radius: 50%
-//     -webkit-appearance: none
+  &::-ms-tooltip
+    display: none
